@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{%static "css/home.css" %}">
+    <title></title>
+</head>o
+<body>
+<h1>Project Information</h1><hr>
+{% if projects %}
+<table border=2>
+    <thead>
+    <th>project name</th>
+    <th>Description</th>
+    </thead>
+    {% for proj in projects %}
+    <tr>
+        <td>{{proj.project}}</td>
+        <td>{{proj.description}}</td>
+    </tr>
+    {%endfor%}
+
+</table>
+{%else%}
+<p>No project Found!!</p>
+{%endif%}
+
+</body>
+</html>
